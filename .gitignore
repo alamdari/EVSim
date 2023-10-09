@@ -2,7 +2,7 @@ data_old/
 cache/
 imn_figs/
 __pycache__/
-ev_charging_stations.json
+least_deviation_v4_scenario_3_0.35-0.45-0.2_moderate_discomfort.csv
 reachable_chargers_from_nodes.csv
 reachable_nodes_from_chargers.csv
 final_road_network.graphml
@@ -13,5 +13,3 @@ main_simulation_old.py
 simulation_omid_SP_full7_precomp_read2.py
 preprocess_road_network_old.py
 *.pyc
-.gitignore
-least_deviation_v4_scenario_3_0.35-0.45-0.2_moderate_discomfort.csv
