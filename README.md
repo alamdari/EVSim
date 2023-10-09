@@ -120,6 +120,9 @@ Run the `get_elevation_data.py` script with the following command, specifying th
 python3 get_elevation_data.py data/merged_elevation_data.tif --min_lon 115.8 --min_lat 39.5 --max_lon 117.4 --max_lat 40.8
 ```
 
+![PNG of the elevation data](./merged_elevation_data_rs.png "PNG of the elevation data")
+
+
 ### Preprocessing Road Network Data
 The `preprocess_road_network.py` script in this repository plays a critical role in preprocessing road network data for the electric vehicle (EV) mobility simulation. It takes road network information, elevation data, and charging station data, and prepares the network for analysis. Run the `preprocess_road_network.py` script with the following command, specifying input and output file paths, bounding box coordinates, and optional parameters:
 
