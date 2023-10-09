@@ -1,3 +1,9 @@
+"""
+Author: Omid Isfahani Alamdari
+Date: 2023-10-02
+Description: The main simulation script.
+"""
+
 import argparse
 from datetime import datetime
 import math

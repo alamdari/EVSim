@@ -6,6 +6,7 @@ This repository is dedicated to simulating the mobility behavior of electric veh
 ## Table of Contents
 
 - [Overview](#overview)
+- [Citation](#citation)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Downloading Geolife Dataset](#downloading-geolife-dataset)
@@ -16,6 +17,7 @@ This repository is dedicated to simulating the mobility behavior of electric veh
   - [Downloading Charging Station Data](#downloading-charging-station-data)
   - [Getting Elevation Data](#getting-elevation-data)
   - [Preprocessing Road Network Data](#preprocessing-road-network-data)
+- [Precomputing Shortest Paths to or from Charging Stations](#precomputing-shortest-paths-to-or-from-charging-stations)
 - [Simulation](#simulation)
 - [Acknowledgement](#acknowledgement)
 - [Contributing](#contributing)
@@ -127,6 +129,15 @@ python3 preprocess_road_network.py road_network.graphml merged_elevation_data.ti
 
 The script reads the downloaded road network, elevation data, and charging stations data. It then assigns elevations to nodes in the network, correcting edge max speeds as needed, either using existing data from OpenStreetMap or the default maximum speed specified. Based on the elevation of two endpoints, the script assigns a slope to each edge, which is crucial for computing travel times and EV energy consumption (in Joules). The script then assigns charging stations to the closest road network nodes. Finally, the preprocessed road network is saved to the specified output GraphML file path.
 
+## Precomputing Shortest Paths to or from Charging Stations
+
+The `shortest_paths_precomputation.py` script in this repository facilitates the precomputation of shortest paths from all network nodes to charging stations and vice versa.
+
+To precompute shortest paths to and from charging stations run the `shortest_paths_precomputation.py` script with the following command, specifying input GraphML file, and the names of two output files and optional parameter of battery capacity (default is 136800000 Joules ~ 38 KWh)
+
+```bash
+python3 shortest_paths_precomputation.py final_road_network.graphml reachable_nodes_from_chargers.csv reachable_chargers_from_nodes.csv --battery_cap 136800000
+```
 
 ## Simulation
 

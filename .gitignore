@@ -13,3 +13,5 @@ main_simulation_old.py
 simulation_omid_SP_full7_precomp_read2.py
 preprocess_road_network_old.py
 *.pyc
+merged_elevation_data_orig.png
+.gitignore
