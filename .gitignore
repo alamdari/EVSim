@@ -1,0 +1,15 @@
+data/
+cache/
+imn_figs/
+__pycache__/
+ev_charging_stations.json
+reachable_chargers_from_nodes.csv
+reachable_nodes_from_chargers.csv
+final_road_network.graphml
+road_network.graphml
+merged_elevation_data.tif
+road_network_old.graphml
+main_simulation_old.py
+simulation_omid_SP_full7_precomp_read2.py
+preprocess_road_network_old.py
+*.pyc
