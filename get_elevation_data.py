@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 def main():
     parser = argparse.ArgumentParser(description="Save merged GeoTIFF data")
-    parser.add_argument("--output_file", required=True, help="Output GeoTIFF file path")
+    parser.add_argument("output_file", required=True, help="Output GeoTIFF file path")
     parser.add_argument("--min_lon", type=float, required=True, help="Minimum longitude")
     parser.add_argument("--min_lat", type=float, required=True, help="Minimum latitude")
     parser.add_argument("--max_lon", type=float, required=True, help="Maximum longitude")

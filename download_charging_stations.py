@@ -4,8 +4,10 @@ import json
 
 
 def main():
-
     default_powerKW = 22.0
+    # a location in Beijing (for Geolife dataset)
+    lat = 39.897435
+    lon = 116.405998
 
     # This code is for representation only. You need to set the maxresults carefully, or 
     # set a proper sleep to avoid reaching API quota.
@@ -13,13 +15,13 @@ def main():
     # ATTENTION: The key must be set with your own API KEY frm the openchargemap portal. 
     parameters = {
         "output": "json",
-        "latitude": 39.897435,  # a location in Beijing (for Geolife dataset)
-        "longitude": 116.405998,
+        "latitude": lat,  
+        "longitude": lon,
         "distance": 50,
         "maxresults": 100,
         "compact": True,
         "verbose": False,
-        "key": "b04bd2b7-0eba-45c0-b012-8f2f640c20d4"
+        "key": "YOUR OCM API KEY"
     }
 
     ocm_results = {}

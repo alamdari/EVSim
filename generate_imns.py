@@ -5,7 +5,7 @@ import gzip
 import datetime
 import networkx as nx
 from networkx.readwrite import json_graph
-
+import argparse
 import sys
 sys.path.append('libs')
 
@@ -44,25 +44,35 @@ def agenda_converter(o):
         return o.__str__()
 
 def main():
+    parser = argparse.ArgumentParser(description="Generate Individual Mobility Network (IMN)")
+    parser.add_argument("input_filename", type=str, help="Path to the input CSV file")
+    parser.add_argument("output_filename", type=str, help="Path to the output json.gz file")
+    
     # Segmentation parameters
-    temporal_thr = 1200
-    spatial_thr = 50
-    max_speed = 0.07
+    parser.add_argument("--temporal_thr", type=int, default=20, help="Temporal threshold in minutes")
+    parser.add_argument("--spatial_thr", type=int, default=50, help="Spatial threshold in meters")
+    
+    args = parser.parse_args()
 
+    input_filename = args.input_filename
+    output_filename = args.output_filename
+    temporal_thr = args.temporal_thr * 60
+    spatial_thr = args.spatial_thr
+    
     # min number of trajectories after segmentation for a user to be considered as
     # a user with enough mobility
     min_trajs_no = 10 
 
-    points_df = pd.read_csv('data/filtered_points_w_header.csv')
+    #points_df = pd.read_csv('data/filtered_points_w_header.csv')
+    points_df = pd.read_csv(input_filename)
 
-    output_filename = 'data/geolife_imns.json.gz'
+    #output_filename = 'data/geolife_imns.json.gz'
 
     for uid, user_data in points_df.groupby('id'):
         points = user_data.sort_values(by=['timestamp'])[
             ['longitude','latitude','timestamp']].values.tolist()
         trajs_dict = trajectory_segmenter.segment_trajectories(
-            points, int(uid), temporal_thr=temporal_thr, spatial_thr=spatial_thr, 
-            max_speed=max_speed)
+            points, int(uid), temporal_thr=temporal_thr, spatial_thr=spatial_thr)
 
         imh = {'uid': int(uid), 'trajectories': trajs_dict}
 
