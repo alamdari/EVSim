@@ -2,7 +2,7 @@
 
 This repository is dedicated to simulating the mobility behavior of electric vehicle (EV) users. We provide tools and scripts to facilitate the simulation process using publicly available datasets, with a focus on the Geolife Trajectories GPS dataset. This dataset is used to extract relevant spatio-temporal information to be used in the simulation.
 
-#### The tools were implemented as part of the work described in our paper 'From fossil fuel to electricity: studying the impact of EVs on the daily mobility life of users' (see Citation below). An extended version can be downloaded [HERE](https://github.com/alamdari/EVSim/blob/28be0bb996c0d24e5b2cb33027f1c1b8b2ef2ba3/Electrical_Vehicles_2022_EXTENDED_VERSION.pdf).
+## The tools were implemented as part of the work described in our paper 'From fossil fuel to electricity: studying the impact of EVs on the daily mobility life of users' (see Citation below). An extended version can be downloaded [HERE](https://github.com/alamdari/EVSim/blob/28be0bb996c0d24e5b2cb33027f1c1b8b2ef2ba3/Electrical_Vehicles_2022_EXTENDED_VERSION.pdf).
 
 ## Table of Contents
 
